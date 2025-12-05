@@ -12,7 +12,8 @@
     "hero": {
       "type": "hero-agency",
       "settings": {
-        "background_image": "shopify://shop_images/helping-senior-on-computer.jpg",
+        "media_type": "image",
+        "background_video": "shopify://files/videos/6994619-uhd_3840_2160_30fps.mp4",
         "overlay_opacity": 90,
         "color_scheme": "scheme-3",
         "heading": "Transformam afacerea ta cu un site performant",
