@@ -1,10 +1,263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    },
+    "before_after_slider_UQjne9": {
+      "type": "before-after-slider",
+      "name": "Before/after slider",
+      "settings": {
+        "heading": "Transformare vizuala",
+        "heading_size": "h2",
+        "subheading": "Vezi diferenta dintre un site vechi si unul modern, profesional",
+        "label_before": "Inainte",
+        "label_after": "Dupa",
+        "initial_position": 50,
+        "show_instruction": true,
+        "instruction_text": "Trage pentru a compara",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "portfolio_projects_bFaHex": {
+      "type": "portfolio-projects",
+      "blocks": {
+        "project_AKeXLT": {
+          "type": "project",
+          "settings": {
+            "title": "Fashion Store",
+            "niche": "Fashion",
+            "description": "",
+            "link": ""
+          }
+        },
+        "project_UWBkrz": {
+          "type": "project",
+          "settings": {
+            "title": "Restaurant Website",
+            "niche": "HoReCa",
+            "description": "",
+            "link": ""
+          }
+        },
+        "project_MqCbgc": {
+          "type": "project",
+          "settings": {
+            "title": "Construction Company",
+            "niche": "Constructii",
+            "description": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "project_AKeXLT",
+        "project_UWBkrz",
+        "project_MqCbgc"
+      ],
+      "name": "Portfolio projects",
+      "settings": {
+        "heading": "Proiectele noastre",
+        "heading_size": "h2",
+        "subheading": "Site-uri pe care le-am creat pentru clientii nostri",
+        "columns_desktop": "3",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "industry_niches_r4pTNG": {
+      "type": "industry-niches",
+      "blocks": {
+        "niche_qxGgMm": {
+          "type": "niche",
+          "settings": {
+            "title": "Constructii",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_VXrzEe": {
+          "type": "niche",
+          "settings": {
+            "title": "Fashion",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_TLpaJ7": {
+          "type": "niche",
+          "settings": {
+            "title": "Beauty",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_HXRphV": {
+          "type": "niche",
+          "settings": {
+            "title": "Medical",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_eiYzbM": {
+          "type": "niche",
+          "settings": {
+            "title": "HoReCa",
+            "description": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "niche_qxGgMm",
+        "niche_VXrzEe",
+        "niche_TLpaJ7",
+        "niche_HXRphV",
+        "niche_eiYzbM"
+      ],
+      "name": "Industry niches",
+      "settings": {
+        "heading": "Industrii pe care le servim",
+        "heading_size": "h2",
+        "subheading": "Experienta in diverse domenii ne permite sa intelegem nevoile specifice afacerii tale",
+        "columns_desktop": "5",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "calculator_form_Gag633": {
+      "type": "calculator-form",
+      "name": "Price calculator",
+      "settings": {
+        "heading": "Calculeaza pretul site-ului tau",
+        "heading_size": "h1",
+        "subheading": "Raspunde la cateva intrebari simple si primeste o estimare de pret instant",
+        "step1_title": "Ce tip de site ai nevoie?",
+        "step2_title": "Cate pagini va avea site-ul?",
+        "step2_note": "Primele 5 pagini sunt incluse in pretul de baza",
+        "step3_title": "Ce nivel de design preferi?",
+        "step4_title": "Datele tale de contact",
+        "color_scheme": "",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "why_us_3iPQMW": {
+      "type": "why-us",
+      "blocks": {
+        "advantage_7P33AL": {
+          "type": "advantage",
+          "settings": {
+            "icon_name": "quality",
+            "title": "Calitate Premium",
+            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
+            "highlight": "100% Custom"
+          }
+        },
+        "advantage_eznC9x": {
+          "type": "advantage",
+          "settings": {
+            "icon_name": "stability",
+            "title": "Tehnologii Moderne",
+            "description": "Folosim Next.js, Shopify si cele mai noi tehnologii pentru rezultate de durata.",
+            "highlight": "Next.js & Shopify"
+          }
+        },
+        "advantage_gF7crM": {
+          "type": "advantage",
+          "settings": {
+            "icon_name": "support",
+            "title": "Mai Putine Batai de Cap",
+            "description": "Serviciu complet: de la design la lansare si mentenanta. Tu te relaxezi.",
+            "highlight": "Full Service"
+          }
+        }
+      },
+      "block_order": [
+        "advantage_7P33AL",
+        "advantage_eznC9x",
+        "advantage_gF7crM"
+      ],
+      "name": "Why us",
+      "settings": {
+        "heading": "De ce sa ne alegi pe noi?",
+        "heading_size": "h2",
+        "subheading": "Avantajele de a lucra cu Perlog Software",
+        "columns_desktop": "3",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "why_website_qqkXUr": {
+      "type": "why-website",
+      "blocks": {
+        "feature_MPtYzn": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "credibility",
+            "title": "Credibilitate",
+            "description": "Un website profesional construieste increderea clientilor in brandul tau."
+          }
+        },
+        "feature_HG6btb": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "sales",
+            "title": "Vanzari 24/7",
+            "description": "Site-ul tau lucreaza non-stop, generand lead-uri si vanzari in timp ce tu te odihnesti."
+          }
+        },
+        "feature_UGYMBd": {
+          "type": "feature",
+          "settings": {
+            "icon_name": "global",
+            "title": "Acoperire globala",
+            "description": "Ajunge la clienti din intreaga lume fara limitele unei locatii fizice."
+          }
+        }
+      },
+      "block_order": [
+        "feature_MPtYzn",
+        "feature_HG6btb",
+        "feature_UGYMBd"
+      ],
+      "name": "Why website",
+      "settings": {
+        "heading": "De ce ai nevoie de un website?",
+        "heading_size": "h2",
+        "subheading": "Un site web profesional este fundatia succesului in mediul online",
+        "columns_desktop": "3",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "before_after_slider_UQjne9",
+    "portfolio_projects_bFaHex",
+    "industry_niches_r4pTNG",
+    "calculator_form_Gag633",
+    "why_us_3iPQMW",
+    "why_website_qqkXUr"
   ]
 }
