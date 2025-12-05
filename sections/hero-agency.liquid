@@ -88,6 +88,11 @@
 
   .hero-agency__text-wrapper {
     max-width: 70rem;
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .hero-agency__text-wrapper.center {
@@ -107,7 +112,10 @@
   .hero-agency__heading {
     margin: 0 0 1.5rem;
     color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(0, 0, 0, 0.4);
   }
 
   .hero-agency__heading.h0 {
@@ -124,9 +132,11 @@
   .hero-agency__subheading {
     margin: 0 0 2rem;
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
     line-height: 1.6;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.6),
+      0 2px 6px rgba(0, 0, 0, 0.3);
   }
 
   @media screen and (min-width: 750px) {
