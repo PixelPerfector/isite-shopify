@@ -72,8 +72,6 @@
         "heading": "Transformare Vizuala",
         "heading_size": "h2",
         "subheading": "Vezi diferenta dintre un site vechi si unul modern, profesional",
-        "image_before": "shopify://shop_images/Screenshot_2025-12-05_at_22.31.35.png",
-        "image_after": "shopify://shop_images/Screenshot_2025-12-05_at_22.32.46.png",
         "label_before": "Inainte",
         "label_after": "Dupa",
         "initial_position": 50,
@@ -87,6 +85,62 @@
     "niches": {
       "type": "industry-niches",
       "blocks": {
+        "niche_mAArJU": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_fQjRDQ": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_QbUdbi": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_fb7Ykk": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_GG4PWt": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_qQkE9w": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_HiQtY7": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
         "construction": {
           "type": "niche",
           "settings": {
@@ -169,6 +223,13 @@
         }
       },
       "block_order": [
+        "niche_mAArJU",
+        "niche_fQjRDQ",
+        "niche_QbUdbi",
+        "niche_fb7Ykk",
+        "niche_GG4PWt",
+        "niche_qQkE9w",
+        "niche_HiQtY7",
         "construction",
         "fashion",
         "beauty",
