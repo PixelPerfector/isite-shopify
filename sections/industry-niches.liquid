@@ -27,7 +27,8 @@
                 widths: '200, 300, 400, 500, 600'
               -}}
             {%- else -%}
-              {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'industry-niches__image placeholder' }}
+              {%- assign placeholder_index = forloop.index | minus: 1 | modulo: 6 | plus: 1 -%}
+              {{ 'collection-' | append: placeholder_index | placeholder_svg_tag: 'industry-niches__image placeholder' }}
             {%- endif -%}
             <div class="industry-niches__overlay"></div>
           </div>

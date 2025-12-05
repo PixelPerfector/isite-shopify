@@ -12,15 +12,11 @@
     "hero": {
       "type": "hero-agency",
       "settings": {
-        "background_image": "shopify://shop_images/helping-senior-on-computer.jpg",
-        "overlay_opacity": 90,
-        "color_scheme": "scheme-3",
         "heading": "Transformam afacerea ta cu un site performant",
-        "heading_size": "h0",
         "subheading": "Cream site-uri web profesionale care atrag clienti si genereaza vanzari.",
-        "content_alignment": "center",
         "button_label": "Calculeaza Pretul",
-        "button_link": ""
+        "color_scheme": "scheme-1",
+        "overlay_opacity": 40
       }
     },
     "why_website": {
@@ -29,7 +25,6 @@
         "credibility": {
           "type": "feature",
           "settings": {
-            "icon_name": "credibility",
             "title": "Credibilitate",
             "description": "Un site profesional construieste incredere."
           }
@@ -37,7 +32,6 @@
         "sales": {
           "type": "feature",
           "settings": {
-            "icon_name": "credibility",
             "title": "Vanzari 24/7",
             "description": "Site-ul tau lucreaza non-stop."
           }
@@ -45,22 +39,14 @@
         "reach": {
           "type": "feature",
           "settings": {
-            "icon_name": "credibility",
             "title": "Acoperire Globala",
             "description": "Ajungi la clienti din toata lumea."
           }
         }
       },
-      "block_order": [
-        "credibility",
-        "sales",
-        "reach"
-      ],
+      "block_order": ["credibility", "sales", "reach"],
       "settings": {
         "heading": "De ce ai nevoie de un site web?",
-        "heading_size": "h2",
-        "subheading": "Un site web profesional este fundatia succesului in mediul online",
-        "columns_desktop": "3",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -70,13 +56,9 @@
       "type": "before-after-slider",
       "settings": {
         "heading": "Transformare Vizuala",
-        "heading_size": "h2",
-        "subheading": "Vezi diferenta dintre un site vechi si unul modern, profesional",
         "label_before": "Inainte",
         "label_after": "Dupa",
         "initial_position": 50,
-        "show_instruction": true,
-        "instruction_text": "Trage pentru a compara",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -85,103 +67,70 @@
     "niches": {
       "type": "industry-niches",
       "blocks": {
-        "niche_mAArJU": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_fQjRDQ": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_QbUdbi": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_fb7Ykk": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_GG4PWt": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_qQkE9w": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
-        "niche_HiQtY7": {
-          "type": "niche",
-          "settings": {
-            "title": "Industry",
-            "description": "",
-            "link": ""
-          }
-        },
         "construction": {
           "type": "niche",
           "settings": {
-            "title": "Constructii",
-            "description": "",
-            "link": ""
+            "title": "Constructii"
           }
         },
         "fashion": {
           "type": "niche",
           "settings": {
-            "title": "Fashion",
-            "description": "",
-            "link": ""
+            "title": "Fashion"
           }
         },
         "beauty": {
           "type": "niche",
           "settings": {
-            "title": "Beauty & Spa",
-            "description": "",
-            "link": ""
+            "title": "Beauty & Spa"
+          }
+        },
+        "medical": {
+          "type": "niche",
+          "settings": {
+            "title": "Medical"
+          }
+        },
+        "horeca": {
+          "type": "niche",
+          "settings": {
+            "title": "HoReCa"
+          }
+        },
+        "auto": {
+          "type": "niche",
+          "settings": {
+            "title": "Auto & Service"
+          }
+        },
+        "realestate": {
+          "type": "niche",
+          "settings": {
+            "title": "Imobiliare"
+          }
+        },
+        "fitness": {
+          "type": "niche",
+          "settings": {
+            "title": "Fitness & Sport"
+          }
+        },
+        "tech": {
+          "type": "niche",
+          "settings": {
+            "title": "IT & Tech"
+          }
+        },
+        "education": {
+          "type": "niche",
+          "settings": {
+            "title": "Educatie"
           }
         }
       },
-      "block_order": [
-        "niche_mAArJU",
-        "niche_fQjRDQ",
-        "niche_QbUdbi",
-        "niche_fb7Ykk",
-        "niche_GG4PWt",
-        "niche_qQkE9w",
-        "niche_HiQtY7",
-        "construction",
-        "fashion",
-        "beauty"
-      ],
+      "block_order": ["construction", "fashion", "beauty", "medical", "horeca", "auto", "realestate", "fitness", "tech", "education"],
       "settings": {
         "heading": "Industrii pe care le deservim",
-        "heading_size": "h2",
-        "subheading": "Experienta in diverse domenii ne permite sa intelegem nevoile specifice afacerii tale",
         "columns_desktop": "5",
         "color_scheme": "scheme-1",
         "padding_top": 52,
@@ -191,46 +140,24 @@
     "portfolio": {
       "type": "portfolio-projects",
       "blocks": {
-        "project_tqqbBz": {
-          "type": "project",
-          "settings": {
-            "title": "Project Name",
-            "niche": "E-commerce",
-            "description": "",
-            "link": ""
-          }
-        },
         "project_1": {
           "type": "project",
           "settings": {
             "title": "Proiect Demo 1",
-            "niche": "E-commerce",
-            "description": "",
-            "link": ""
+            "niche": "E-commerce"
           }
         },
         "project_2": {
           "type": "project",
           "settings": {
             "title": "Proiect Demo 2",
-            "niche": "Corporate",
-            "description": "",
-            "link": ""
+            "niche": "Corporate"
           }
         }
       },
-      "block_order": [
-        "project_tqqbBz",
-        "project_1",
-        "project_2"
-      ],
+      "block_order": ["project_1", "project_2"],
       "settings": {
         "heading": "Proiectele Noastre",
-        "heading_size": "h2",
-        "subheading": "Site-uri pe care le-am creat pentru clientii nostri",
-        "columns_desktop": "3",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -239,44 +166,24 @@
     "why_us": {
       "type": "why-us",
       "blocks": {
-        "advantage_PDpjCL": {
-          "type": "advantage",
-          "settings": {
-            "icon_name": "quality",
-            "title": "Calitate",
-            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
-            "highlight": ""
-          }
-        },
         "quality": {
           "type": "advantage",
           "settings": {
-            "icon_name": "quality",
             "title": "Calitate Premium",
-            "description": "Cod curat, design modern.",
-            "highlight": ""
+            "description": "Cod curat, design modern."
           }
         },
         "stability": {
           "type": "advantage",
           "settings": {
-            "icon_name": "quality",
             "title": "Stabilitate",
-            "description": "Site-uri stabile si sigure.",
-            "highlight": ""
+            "description": "Site-uri stabile si sigure."
           }
         }
       },
-      "block_order": [
-        "advantage_PDpjCL",
-        "quality",
-        "stability"
-      ],
+      "block_order": ["quality", "stability"],
       "settings": {
         "heading": "De ce sa ne alegi pe noi?",
-        "heading_size": "h2",
-        "subheading": "Avantajele de a lucra cu Perlog Software",
-        "columns_desktop": "3",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -285,46 +192,28 @@
     "testimonials": {
       "type": "testimonials-google",
       "blocks": {
-        "review_ifNBci": {
-          "type": "review",
-          "settings": {
-            "name": "Ion Popescu",
-            "date": "Acum 2 saptamani",
-            "rating": 5,
-            "text": "Echipa foarte profesionista! Site-ul arata exact cum mi-am dorit si a fost livrat la timp. Recomand cu incredere!"
-          }
-        },
         "review_1": {
           "type": "review",
           "settings": {
-            "name": "Alexandru M.",
-            "date": "Acum 2 saptamani",
             "rating": 5,
-            "text": "Foarte multumit de colaborare!"
+            "name": "Alexandru M.",
+            "text": "Foarte multumit de colaborare!",
+            "date": "Acum 2 saptamani"
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "name": "Maria P.",
-            "date": "Acum 1 luna",
             "rating": 5,
-            "text": "Recomand cu incredere!"
+            "name": "Maria P.",
+            "text": "Recomand cu incredere!",
+            "date": "Acum 1 luna"
           }
         }
       },
-      "block_order": [
-        "review_ifNBci",
-        "review_1",
-        "review_2"
-      ],
+      "block_order": ["review_1", "review_2"],
       "settings": {
         "heading": "Ce spun clientii nostri",
-        "heading_size": "h2",
-        "subheading": "Recenzii de la clientii care ne-au acordat incredere",
-        "columns_desktop": "3",
-        "google_link": "",
-        "google_link_text": "Vezi toate recenziile pe Google",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -333,48 +222,14 @@
     "pricing": {
       "type": "pricing-plans",
       "blocks": {
-        "plan_qMQTrE": {
-          "type": "plan",
-          "settings": {
-            "name": "Starter",
-            "badge": "",
-            "price_prefix": "de la",
-            "price": "500 EUR",
-            "price_suffix": "",
-            "description": "Perfect pentru afaceri mici",
-            "features": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>",
-            "button_label": "Solicita Oferta",
-            "button_link": "",
-            "highlighted": false
-          }
-        },
-        "plan_XegTtT": {
-          "type": "plan",
-          "settings": {
-            "name": "Starter",
-            "badge": "",
-            "price_prefix": "de la",
-            "price": "500 EUR",
-            "price_suffix": "",
-            "description": "Perfect pentru afaceri mici",
-            "features": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>",
-            "button_label": "Solicita Oferta",
-            "button_link": "",
-            "highlighted": false
-          }
-        },
         "starter": {
           "type": "plan",
           "settings": {
             "name": "Starter",
-            "badge": "",
-            "price_prefix": "de la",
             "price": "500 EUR",
-            "price_suffix": "",
-            "description": "Perfect pentru afaceri mici",
+            "price_prefix": "de la",
             "features": "<ul><li>Landing page</li><li>Design responsiv</li></ul>",
             "button_label": "Solicita Oferta",
-            "button_link": "",
             "highlighted": false
           }
         },
@@ -382,31 +237,17 @@
           "type": "plan",
           "settings": {
             "name": "Professional",
-            "badge": "",
-            "price_prefix": "de la",
             "price": "1500 EUR",
-            "price_suffix": "",
-            "description": "Perfect pentru afaceri mici",
+            "price_prefix": "de la",
             "features": "<ul><li>Site multi-pagina</li><li>Design personalizat</li></ul>",
             "button_label": "Solicita Oferta",
-            "button_link": "",
             "highlighted": true
           }
         }
       },
-      "block_order": [
-        "plan_qMQTrE",
-        "plan_XegTtT",
-        "starter",
-        "pro"
-      ],
+      "block_order": ["starter", "pro"],
       "settings": {
         "heading": "Pachete si Preturi",
-        "heading_size": "h2",
-        "subheading": "Alege pachetul potrivit pentru afacerea ta",
-        "upsell_icon": true,
-        "upsell_text": "Mentenanta post-lansare inclusa pentru toate pachetele",
-        "note": "* Preturile sunt orientative. Solicita o oferta personalizata pentru nevoile tale.",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -415,27 +256,6 @@
     "faq": {
       "type": "faq-accordion",
       "blocks": {
-        "question_VC3xTL": {
-          "type": "question",
-          "settings": {
-            "question": "Cat dureaza crearea unui website?",
-            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
-          }
-        },
-        "question_8TYCt7": {
-          "type": "question",
-          "settings": {
-            "question": "Cat dureaza crearea unui website?",
-            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
-          }
-        },
-        "question_aEWh4C": {
-          "type": "question",
-          "settings": {
-            "question": "Cat dureaza crearea unui website?",
-            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
-          }
-        },
         "q1": {
           "type": "question",
           "settings": {
@@ -451,21 +271,9 @@
           }
         }
       },
-      "block_order": [
-        "question_VC3xTL",
-        "question_8TYCt7",
-        "question_aEWh4C",
-        "q1",
-        "q2"
-      ],
+      "block_order": ["q1", "q2"],
       "settings": {
         "heading": "Intrebari Frecvente",
-        "heading_size": "h2",
-        "subheading": "Raspunsuri la cele mai comune intrebari despre serviciile noastre",
-        "first_open": true,
-        "cta_text": "Nu ai gasit raspunsul pe care il cautai?",
-        "cta_button_label": "Contacteaza-ne",
-        "cta_button_link": "",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
