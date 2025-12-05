@@ -85,6 +85,62 @@
     "niches": {
       "type": "industry-niches",
       "blocks": {
+        "niche_mAArJU": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_fQjRDQ": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_QbUdbi": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_fb7Ykk": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_GG4PWt": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_qQkE9w": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
+        "niche_HiQtY7": {
+          "type": "niche",
+          "settings": {
+            "title": "Industry",
+            "description": "",
+            "link": ""
+          }
+        },
         "construction": {
           "type": "niche",
           "settings": {
@@ -111,6 +167,13 @@
         }
       },
       "block_order": [
+        "niche_mAArJU",
+        "niche_fQjRDQ",
+        "niche_QbUdbi",
+        "niche_fb7Ykk",
+        "niche_GG4PWt",
+        "niche_qQkE9w",
+        "niche_HiQtY7",
         "construction",
         "fashion",
         "beauty"
@@ -128,6 +191,15 @@
     "portfolio": {
       "type": "portfolio-projects",
       "blocks": {
+        "project_tqqbBz": {
+          "type": "project",
+          "settings": {
+            "title": "Project Name",
+            "niche": "E-commerce",
+            "description": "",
+            "link": ""
+          }
+        },
         "project_1": {
           "type": "project",
           "settings": {
@@ -148,6 +220,7 @@
         }
       },
       "block_order": [
+        "project_tqqbBz",
         "project_1",
         "project_2"
       ],
@@ -166,6 +239,15 @@
     "why_us": {
       "type": "why-us",
       "blocks": {
+        "advantage_PDpjCL": {
+          "type": "advantage",
+          "settings": {
+            "icon_name": "quality",
+            "title": "Calitate",
+            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
+            "highlight": ""
+          }
+        },
         "quality": {
           "type": "advantage",
           "settings": {
@@ -186,6 +268,7 @@
         }
       },
       "block_order": [
+        "advantage_PDpjCL",
         "quality",
         "stability"
       ],
@@ -202,6 +285,15 @@
     "testimonials": {
       "type": "testimonials-google",
       "blocks": {
+        "review_ifNBci": {
+          "type": "review",
+          "settings": {
+            "name": "Ion Popescu",
+            "date": "Acum 2 saptamani",
+            "rating": 5,
+            "text": "Echipa foarte profesionista! Site-ul arata exact cum mi-am dorit si a fost livrat la timp. Recomand cu incredere!"
+          }
+        },
         "review_1": {
           "type": "review",
           "settings": {
@@ -222,6 +314,7 @@
         }
       },
       "block_order": [
+        "review_ifNBci",
         "review_1",
         "review_2"
       ],
@@ -240,6 +333,36 @@
     "pricing": {
       "type": "pricing-plans",
       "blocks": {
+        "plan_qMQTrE": {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "badge": "",
+            "price_prefix": "de la",
+            "price": "500 EUR",
+            "price_suffix": "",
+            "description": "Perfect pentru afaceri mici",
+            "features": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>",
+            "button_label": "Solicita Oferta",
+            "button_link": "",
+            "highlighted": false
+          }
+        },
+        "plan_XegTtT": {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "badge": "",
+            "price_prefix": "de la",
+            "price": "500 EUR",
+            "price_suffix": "",
+            "description": "Perfect pentru afaceri mici",
+            "features": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>",
+            "button_label": "Solicita Oferta",
+            "button_link": "",
+            "highlighted": false
+          }
+        },
         "starter": {
           "type": "plan",
           "settings": {
@@ -272,6 +395,8 @@
         }
       },
       "block_order": [
+        "plan_qMQTrE",
+        "plan_XegTtT",
         "starter",
         "pro"
       ],
@@ -290,6 +415,27 @@
     "faq": {
       "type": "faq-accordion",
       "blocks": {
+        "question_VC3xTL": {
+          "type": "question",
+          "settings": {
+            "question": "Cat dureaza crearea unui website?",
+            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
+          }
+        },
+        "question_8TYCt7": {
+          "type": "question",
+          "settings": {
+            "question": "Cat dureaza crearea unui website?",
+            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
+          }
+        },
+        "question_aEWh4C": {
+          "type": "question",
+          "settings": {
+            "question": "Cat dureaza crearea unui website?",
+            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
+          }
+        },
         "q1": {
           "type": "question",
           "settings": {
@@ -306,6 +452,9 @@
         }
       },
       "block_order": [
+        "question_VC3xTL",
+        "question_8TYCt7",
+        "question_aEWh4C",
         "q1",
         "q2"
       ],
