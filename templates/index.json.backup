@@ -6,6 +6,7 @@
         "heading": "Transformam afacerea ta cu un site performant",
         "subheading": "Cream site-uri web profesionale care atrag clienti si genereaza vanzari.",
         "button_label": "Calculeaza Pretul",
+        "button_link": "/pages/calculator",
         "color_scheme": "scheme-1",
         "overlay_opacity": 40
       }
@@ -75,54 +76,11 @@
           "settings": {
             "title": "Beauty & Spa"
           }
-        },
-        "medical": {
-          "type": "niche",
-          "settings": {
-            "title": "Medical"
-          }
-        },
-        "horeca": {
-          "type": "niche",
-          "settings": {
-            "title": "HoReCa"
-          }
-        },
-        "auto": {
-          "type": "niche",
-          "settings": {
-            "title": "Auto & Service"
-          }
-        },
-        "realestate": {
-          "type": "niche",
-          "settings": {
-            "title": "Imobiliare"
-          }
-        },
-        "fitness": {
-          "type": "niche",
-          "settings": {
-            "title": "Fitness & Sport"
-          }
-        },
-        "tech": {
-          "type": "niche",
-          "settings": {
-            "title": "IT & Tech"
-          }
-        },
-        "education": {
-          "type": "niche",
-          "settings": {
-            "title": "Educatie"
-          }
         }
       },
-      "block_order": ["construction", "fashion", "beauty", "medical", "horeca", "auto", "realestate", "fitness", "tech", "education"],
+      "block_order": ["construction", "fashion", "beauty"],
       "settings": {
         "heading": "Industrii pe care le deservim",
-        "columns_desktop": "5",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
@@ -217,10 +175,10 @@
           "type": "plan",
           "settings": {
             "name": "Starter",
-            "price": "500 EUR",
-            "price_prefix": "de la",
-            "features": "<ul><li>Landing page</li><li>Design responsiv</li></ul>",
+            "price": "de la 500 EUR",
+            "features": "<p>Landing page<br>Design responsiv</p>",
             "button_label": "Solicita Oferta",
+            "button_link": "/pages/calculator",
             "highlighted": false
           }
         },
@@ -228,10 +186,10 @@
           "type": "plan",
           "settings": {
             "name": "Professional",
-            "price": "1500 EUR",
-            "price_prefix": "de la",
-            "features": "<ul><li>Site multi-pagina</li><li>Design personalizat</li></ul>",
+            "price": "de la 1500 EUR",
+            "features": "<p>Site multi-pagina<br>Design personalizat</p>",
             "button_label": "Solicita Oferta",
+            "button_link": "/pages/calculator",
             "highlighted": true
           }
         }

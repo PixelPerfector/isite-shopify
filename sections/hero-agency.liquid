@@ -11,7 +11,7 @@
     </div>
   {%- endif -%}
 
-  <div class="hero-agency__overlay" style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></div>
+  <div class="hero-agency__overlay" style="background-color: rgba(0, 0, 0, {{ section.settings.overlay_opacity | times: 0.01 }})"></div>
 
   <div class="hero-agency__content page-width">
     <div class="hero-agency__text-wrapper {{ section.settings.content_alignment }}">
@@ -236,8 +236,7 @@
     {
       "type": "url",
       "id": "button_link",
-      "label": "Button link",
-      "default": "/pages/calculator"
+      "label": "Button link"
     }
   ],
   "presets": [
