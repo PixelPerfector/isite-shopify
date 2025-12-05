@@ -302,37 +302,37 @@
     "why_us": {
       "type": "why-us",
       "blocks": {
-        "advantage_UnppCn": {
-          "type": "advantage",
-          "settings": {
-            "icon_name": "quality",
-            "title": "Calitate",
-            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
-            "highlight": ""
-          }
-        },
         "quality": {
           "type": "advantage",
           "settings": {
             "icon_name": "quality",
             "title": "Calitate Premium",
-            "description": "Cod curat, design modern.",
+            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
+            "highlight": ""
+          }
+        },
+        "support": {
+          "type": "advantage",
+          "settings": {
+            "icon_name": "support",
+            "title": "Suport Dedicat",
+            "description": "Echipa noastra este mereu disponibila sa te ajute cu orice problema.",
             "highlight": ""
           }
         },
         "stability": {
           "type": "advantage",
           "settings": {
-            "icon_name": "quality",
+            "icon_name": "stable",
             "title": "Stabilitate",
-            "description": "Site-uri stabile si sigure.",
+            "description": "Site-uri stabile si sigure, construite pe tehnologii moderne.",
             "highlight": ""
           }
         }
       },
       "block_order": [
-        "advantage_UnppCn",
         "quality",
+        "support",
         "stability"
       ],
       "settings": {
