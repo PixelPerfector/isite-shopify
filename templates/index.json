@@ -302,46 +302,44 @@
     "why_us": {
       "type": "why-us",
       "blocks": {
-        "speed": {
-          "type": "stat",
+        "quality": {
+          "type": "advantage",
           "settings": {
-            "icon_type": "rocket",
-            "icon_color": "blue",
-            "number": "2-4",
-            "unit": "Saptamani",
-            "tagline": "De la idee la site live"
+            "icon_name": "quality",
+            "title": "Calitate Premium",
+            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
+            "highlight": ""
           }
         },
         "support": {
-          "type": "stat",
+          "type": "advantage",
           "settings": {
-            "icon_type": "shield",
-            "icon_color": "green",
-            "number": "6",
-            "unit": "Luni Suport",
-            "tagline": "Inclus gratuit in pret"
+            "icon_name": "support",
+            "title": "Suport Dedicat",
+            "description": "Echipa noastra este mereu disponibila sa te ajute cu orice problema.",
+            "highlight": ""
           }
         },
-        "guarantee": {
-          "type": "stat",
+        "stability": {
+          "type": "advantage",
           "settings": {
-            "icon_type": "trophy",
-            "icon_color": "gold",
-            "number": "100%",
-            "unit": "Garantie",
-            "tagline": "Satisfactie sau banii inapoi"
+            "icon_name": "stable",
+            "title": "Stabilitate",
+            "description": "Site-uri stabile si sigure, construite pe tehnologii moderne.",
+            "highlight": ""
           }
         }
       },
       "block_order": [
-        "speed",
+        "quality",
         "support",
-        "guarantee"
+        "stability"
       ],
       "settings": {
         "heading": "De ce sa ne alegi pe noi?",
         "heading_size": "h2",
-        "subheading": "",
+        "subheading": "Avantajele de a lucra cu Perlog Software",
+        "columns_desktop": "3",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
