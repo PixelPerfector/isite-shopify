@@ -13,8 +13,8 @@
       "type": "hero-agency",
       "settings": {
         "background_image": "shopify://shop_images/helping-senior-on-computer.jpg",
-        "overlay_opacity": 40,
-        "color_scheme": "scheme-1",
+        "overlay_opacity": 90,
+        "color_scheme": "scheme-3",
         "heading": "Transformam afacerea ta cu un site performant",
         "heading_size": "h0",
         "subheading": "Cream site-uri web profesionale care atrag clienti si genereaza vanzari.",
@@ -168,43 +168,57 @@
         "medical": {
           "type": "niche",
           "settings": {
-            "title": "Medical"
+            "title": "Medical",
+            "description": "",
+            "link": ""
           }
         },
         "horeca": {
           "type": "niche",
           "settings": {
-            "title": "HoReCa"
+            "title": "HoReCa",
+            "description": "",
+            "link": ""
           }
         },
         "auto": {
           "type": "niche",
           "settings": {
-            "title": "Auto & Service"
+            "title": "Auto & Service",
+            "description": "",
+            "link": ""
           }
         },
         "realestate": {
           "type": "niche",
           "settings": {
-            "title": "Imobiliare"
+            "title": "Imobiliare",
+            "description": "",
+            "link": ""
           }
         },
         "fitness": {
           "type": "niche",
           "settings": {
-            "title": "Fitness & Sport"
+            "title": "Fitness & Sport",
+            "description": "",
+            "link": ""
           }
         },
         "tech": {
           "type": "niche",
           "settings": {
-            "title": "IT & Tech"
+            "title": "IT & Tech",
+            "description": "",
+            "link": ""
           }
         },
         "education": {
           "type": "niche",
           "settings": {
-            "title": "Educatie"
+            "title": "Educatie",
+            "description": "",
+            "link": ""
           }
         }
       },
