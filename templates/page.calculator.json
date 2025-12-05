@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "calculator": {
+      "type": "calculator-form",
+      "settings": {
+        "heading": "Calculeaza pretul site-ului tau",
+        "subheading": "Raspunde la cateva intrebari simple si primeste o estimare de pret instant",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "calculator"
+  ]
+}

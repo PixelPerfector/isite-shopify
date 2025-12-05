@@ -1,0 +1,408 @@
+<div class="testimonials-google color-{{ section.settings.color_scheme }} gradient">
+  <div class="testimonials-google__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="testimonials-google__header">
+        <h2 class="testimonials-google__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="testimonials-google__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="testimonials-google__grid testimonials-google__grid--{{ section.settings.columns_desktop }}">
+      {%- for block in section.blocks -%}
+        <div class="testimonials-google__card" {{ block.shopify_attributes }}>
+          <div class="testimonials-google__card-header">
+            <div class="testimonials-google__avatar">
+              {%- if block.settings.photo != blank -%}
+                {{- block.settings.photo | image_url: width: 100 | image_tag:
+                  class: 'testimonials-google__photo',
+                  loading: 'lazy'
+                -}}
+              {%- else -%}
+                <div class="testimonials-google__avatar-placeholder">
+                  {{ block.settings.name | slice: 0 | upcase }}
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="testimonials-google__meta">
+              <span class="testimonials-google__name">{{ block.settings.name }}</span>
+              {%- if block.settings.date != blank -%}
+                <span class="testimonials-google__date">{{ block.settings.date }}</span>
+              {%- endif -%}
+            </div>
+            <div class="testimonials-google__google-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="testimonials-google__stars">
+            {%- assign rating = block.settings.rating | default: 5 -%}
+            {%- for i in (1..5) -%}
+              {%- if i <= rating -%}
+                <svg class="testimonials-google__star testimonials-google__star--filled" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {%- else -%}
+                <svg class="testimonials-google__star" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if block.settings.text != blank -%}
+            <p class="testimonials-google__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.google_link != blank -%}
+      <div class="testimonials-google__footer">
+        <a href="{{ section.settings.google_link }}" class="testimonials-google__link" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          {{ section.settings.google_link_text | default: 'Vezi toate recenziile pe Google' }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+{% stylesheet %}
+  .testimonials-google__header {
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+  }
+
+  .testimonials-google__heading {
+    margin: 0 0 1rem;
+  }
+
+  .testimonials-google__subheading {
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .testimonials-google__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonials-google__grid {
+      gap: 2rem;
+    }
+
+    .testimonials-google__grid--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-google__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-google__grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .testimonials-google__card {
+    padding: 1.5rem;
+    background: rgb(var(--color-background));
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(var(--color-foreground), 0.08);
+    border: 1px solid rgba(var(--color-foreground), 0.06);
+  }
+
+  .testimonials-google__card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonials-google__avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .testimonials-google__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonials-google__avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .testimonials-google__meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .testimonials-google__name {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .testimonials-google__date {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .testimonials-google__google-icon {
+    flex-shrink: 0;
+  }
+
+  .testimonials-google__stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonials-google__star {
+    color: #dadce0;
+  }
+
+  .testimonials-google__star--filled {
+    color: #fbbc04;
+  }
+
+  .testimonials-google__text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgb(var(--color-foreground));
+  }
+
+  .testimonials-google__footer {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .testimonials-google__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 24px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .testimonials-google__link:hover {
+    background: rgba(var(--color-foreground), 0.05);
+    border-color: rgba(var(--color-foreground), 0.3);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonials (Google style)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ce spun clientii nostri"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Recenzii de la clientii care ne-au acordat incredere"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "Google reviews link"
+    },
+    {
+      "type": "url",
+      "id": "google_link",
+      "label": "Google reviews page URL"
+    },
+    {
+      "type": "text",
+      "id": "google_link_text",
+      "label": "Link text",
+      "default": "Vezi toate recenziile pe Google"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "User photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer name",
+          "default": "Ion Popescu"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Review date",
+          "default": "Acum 2 saptamani"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Star rating"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "Echipa foarte profesionista! Site-ul arata exact cum mi-am dorit si a fost livrat la timp. Recomand cu incredere!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials (Google style)",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "name": "Maria Ionescu",
+            "date": "Acum 1 saptamana",
+            "rating": 5,
+            "text": "Super multumita de colaborare! Site-ul nostru de prezentare arata impecabil si am primit multe complimente de la clienti."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Andrei Popa",
+            "date": "Acum 2 saptamani",
+            "rating": 5,
+            "text": "Profesionalism de top! Au inteles exact ce aveam nevoie pentru magazinul online si au livrat peste asteptari."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Elena Dumitrescu",
+            "date": "Acum 1 luna",
+            "rating": 5,
+            "text": "Comunicare excelenta si rezultate pe masura. Site-ul incarca foarte rapid si este usor de folosit."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

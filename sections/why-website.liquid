@@ -1,0 +1,292 @@
+<div class="why-website color-{{ section.settings.color_scheme }} gradient">
+  <div class="why-website__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="why-website__header">
+        <h2 class="why-website__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="why-website__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="why-website__grid why-website__grid--{{ section.settings.columns_desktop }}">
+      {%- for block in section.blocks -%}
+        <div class="why-website__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="why-website__icon">
+              {{ block.settings.icon | image_url: width: 120 | image_tag: class: 'why-website__icon-image' }}
+            </div>
+          {%- else -%}
+            <div class="why-website__icon why-website__icon--default">
+              {%- case block.settings.icon_name -%}
+                {%- when 'credibility' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                {%- when 'sales' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                {%- when 'global' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                {%- when 'growth' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                {%- when 'mobile' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                {%- when 'speed' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                {%- else -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              {%- endcase -%}
+            </div>
+          {%- endif -%}
+
+          {%- if block.settings.title != blank -%}
+            <h3 class="why-website__item-title h4">{{ block.settings.title }}</h3>
+          {%- endif -%}
+
+          {%- if block.settings.description != blank -%}
+            <p class="why-website__item-description">{{ block.settings.description }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+{% stylesheet %}
+  .why-website__container {
+    text-align: center;
+  }
+
+  .why-website__header {
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+  }
+
+  .why-website__heading {
+    margin: 0 0 1rem;
+  }
+
+  .why-website__subheading {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+
+  .why-website__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 750px) {
+    .why-website__grid--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-website__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-website__grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .why-website__item {
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .why-website__item:hover {
+    transform: translateY(-4px);
+  }
+
+  .why-website__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.05);
+  }
+
+  .why-website__icon--default svg {
+    color: rgb(var(--color-foreground));
+    opacity: 0.8;
+  }
+
+  .why-website__icon-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .why-website__item-title {
+    margin: 0 0 0.75rem;
+  }
+
+  .why-website__item-description {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Why website",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "De ce ai nevoie de un website?"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Un site web profesional este fundatia succesului in mediul online"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Number of columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Custom icon image"
+        },
+        {
+          "type": "select",
+          "id": "icon_name",
+          "label": "Default icon (if no custom icon)",
+          "options": [
+            { "value": "credibility", "label": "Credibility (shield)" },
+            { "value": "sales", "label": "24/7 Sales (clock)" },
+            { "value": "global", "label": "Global reach (globe)" },
+            { "value": "growth", "label": "Growth (chart)" },
+            { "value": "mobile", "label": "Mobile (phone)" },
+            { "value": "speed", "label": "Speed (lightning)" }
+          ],
+          "default": "credibility"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Credibilitate"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Un website profesional construieste increderea clientilor in brandul tau."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why website",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon_name": "credibility",
+            "title": "Credibilitate",
+            "description": "Un website profesional construieste increderea clientilor in brandul tau."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_name": "sales",
+            "title": "Vanzari 24/7",
+            "description": "Site-ul tau lucreaza non-stop, generand lead-uri si vanzari in timp ce tu te odihnesti."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_name": "global",
+            "title": "Acoperire globala",
+            "description": "Ajunge la clienti din intreaga lume fara limitele unei locatii fizice."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

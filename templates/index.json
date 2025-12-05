@@ -1,0 +1,355 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-agency",
+      "settings": {
+        "heading": "Transformam afacerea ta cu un site performant",
+        "subheading": "Creăm site-uri web profesionale care atrag clienți și generează vânzări. Soluții personalizate pentru afacerea ta.",
+        "button_text": "Calculeaza Pretul",
+        "button_url": "/pages/calculator",
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 40,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "why_website": {
+      "type": "why-website",
+      "blocks": {
+        "credibility": {
+          "type": "feature",
+          "settings": {
+            "icon": "credibility",
+            "title": "Credibilitate",
+            "description": "Un site profesional construieste incredere si te pozitioneaza ca expert in domeniul tau."
+          }
+        },
+        "sales": {
+          "type": "feature",
+          "settings": {
+            "icon": "sales",
+            "title": "Vanzari 24/7",
+            "description": "Site-ul tau lucreaza non-stop, aducand clienti si generand vanzari chiar si cand dormi."
+          }
+        },
+        "reach": {
+          "type": "feature",
+          "settings": {
+            "icon": "reach",
+            "title": "Acoperire Globala",
+            "description": "Ajungi la clienti din toata lumea, fara limitari geografice sau de program."
+          }
+        }
+      },
+      "block_order": ["credibility", "sales", "reach"],
+      "settings": {
+        "heading": "De ce ai nevoie de un site web?",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "before_after": {
+      "type": "before-after-slider",
+      "settings": {
+        "heading": "Transformare Vizuala",
+        "label_before": "Inainte",
+        "label_after": "Dupa",
+        "initial_position": 50,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "niches": {
+      "type": "industry-niches",
+      "blocks": {
+        "construction": {
+          "type": "niche",
+          "settings": {
+            "title": "Constructii",
+            "icon": "building"
+          }
+        },
+        "fashion": {
+          "type": "niche",
+          "settings": {
+            "title": "Fashion",
+            "icon": "fashion"
+          }
+        },
+        "beauty": {
+          "type": "niche",
+          "settings": {
+            "title": "Beauty & Spa",
+            "icon": "beauty"
+          }
+        },
+        "medical": {
+          "type": "niche",
+          "settings": {
+            "title": "Medical",
+            "icon": "medical"
+          }
+        },
+        "horeca": {
+          "type": "niche",
+          "settings": {
+            "title": "HoReCa",
+            "icon": "restaurant"
+          }
+        },
+        "auto": {
+          "type": "niche",
+          "settings": {
+            "title": "Auto",
+            "icon": "auto"
+          }
+        }
+      },
+      "block_order": ["construction", "fashion", "beauty", "medical", "horeca", "auto"],
+      "settings": {
+        "heading": "Industrii pe care le deservim",
+        "subheading": "Experienta in multiple domenii ne permite sa intelegem nevoile specifice ale fiecarei industrii",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "portfolio": {
+      "type": "portfolio-projects",
+      "blocks": {
+        "project_1": {
+          "type": "project",
+          "settings": {
+            "title": "Proiect Demo 1",
+            "niche": "E-commerce",
+            "url": "#"
+          }
+        },
+        "project_2": {
+          "type": "project",
+          "settings": {
+            "title": "Proiect Demo 2",
+            "niche": "Corporate",
+            "url": "#"
+          }
+        },
+        "project_3": {
+          "type": "project",
+          "settings": {
+            "title": "Proiect Demo 3",
+            "niche": "Landing Page",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": ["project_1", "project_2", "project_3"],
+      "settings": {
+        "heading": "Proiectele Noastre",
+        "subheading": "Cateva exemple din lucrarile noastre recente",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "why_us": {
+      "type": "why-us",
+      "blocks": {
+        "quality": {
+          "type": "advantage",
+          "settings": {
+            "icon": "quality",
+            "title": "Calitate Premium",
+            "description": "Cod curat, design modern si performanta excelenta. Nu facem compromisuri la calitate."
+          }
+        },
+        "stability": {
+          "type": "advantage",
+          "settings": {
+            "icon": "stability",
+            "title": "Stabilitate",
+            "description": "Site-uri stabile si sigure, cu uptime de peste 99.9% si backup-uri regulate."
+          }
+        },
+        "support": {
+          "type": "advantage",
+          "settings": {
+            "icon": "support",
+            "title": "Mai Putine Batai de Cap",
+            "description": "Ne ocupam de tot - de la dezvoltare la mentenanta. Tu te concentrezi pe afacere."
+          }
+        }
+      },
+      "block_order": ["quality", "stability", "support"],
+      "settings": {
+        "heading": "De ce sa ne alegi pe noi?",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "testimonials": {
+      "type": "testimonials-google",
+      "blocks": {
+        "review_1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Alexandru M.",
+            "text": "Foarte multumit de colaborare! Echipa a fost profesionista si site-ul arata exact cum mi-am dorit.",
+            "date": "Acum 2 saptamani"
+          }
+        },
+        "review_2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Maria P.",
+            "text": "Recomand cu incredere! Au inteles exact ce am nevoie si au livrat la timp un site exceptional.",
+            "date": "Acum 1 luna"
+          }
+        },
+        "review_3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "name": "Andrei V.",
+            "text": "Profesionalism la cel mai inalt nivel. Site-ul ne-a adus de 3 ori mai multi clienti.",
+            "date": "Acum 3 saptamani"
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": {
+        "heading": "Ce spun clientii nostri",
+        "show_google_badge": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "pricing": {
+      "type": "pricing-plans",
+      "blocks": {
+        "starter": {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "price_text": "de la 500 EUR",
+            "features": "<p>Landing page<br>Design responsiv<br>Formular de contact<br>Optimizare SEO de baza<br>1 luna suport</p>",
+            "cta_text": "Solicita Oferta",
+            "cta_url": "/pages/calculator",
+            "highlighted": false
+          }
+        },
+        "pro": {
+          "type": "plan",
+          "settings": {
+            "name": "Professional",
+            "price_text": "de la 1500 EUR",
+            "features": "<p>Site multi-pagina<br>Design personalizat<br>Blog integrat<br>Optimizare SEO avansata<br>3 luni suport<br>Training utilizare</p>",
+            "cta_text": "Solicita Oferta",
+            "cta_url": "/pages/calculator",
+            "highlighted": true
+          }
+        },
+        "custom": {
+          "type": "plan",
+          "settings": {
+            "name": "Custom",
+            "price_text": "Pret personalizat",
+            "features": "<p>Magazin online complet<br>Design unic 100%<br>Functionalitati la cerere<br>Integrari externe<br>12 luni suport<br>Training si documentatie</p>",
+            "cta_text": "Solicita Oferta",
+            "cta_url": "/pages/calculator",
+            "highlighted": false
+          }
+        }
+      },
+      "block_order": ["starter", "pro", "custom"],
+      "settings": {
+        "heading": "Pachete si Preturi",
+        "subheading": "Alege pachetul potrivit pentru nevoile tale",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Cat dureaza realizarea unui site?",
+            "answer": "Depinde de complexitate. Un landing page poate fi gata in 1-2 saptamani, un site de prezentare in 2-4 saptamani, iar un magazin online in 4-8 saptamani."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Ce include pretul?",
+            "answer": "Pretul include design, dezvoltare, optimizare SEO de baza, hosting pentru primul an si suport tehnic conform pachetului ales. Nu exista costuri ascunse."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Pot modifica site-ul singur dupa livrare?",
+            "answer": "Da! Toate site-urile noastre vin cu un panou de administrare intuitiv. Oferim si training pentru a te ajuta sa faci modificari simple."
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Oferiti si servicii de mentenanta?",
+            "answer": "Da, oferim pachete de mentenanta lunara care includ actualizari de securitate, backup-uri, monitorizare si suport tehnic continuu."
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Ce se intampla daca nu sunt multumit?",
+            "answer": "Lucram iterativ si cerem feedback la fiecare etapa. Facem revizuiri pana cand esti 100% multumit de rezultat."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "heading": "Intrebari Frecvente",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "blog": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Blog",
+        "heading_size": "h2",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "why_website",
+    "before_after",
+    "niches",
+    "portfolio",
+    "why_us",
+    "testimonials",
+    "pricing",
+    "faq",
+    "blog"
+  ]
+}

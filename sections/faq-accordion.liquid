@@ -1,0 +1,344 @@
+<div class="faq-accordion color-{{ section.settings.color_scheme }} gradient">
+  <div class="faq-accordion__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="faq-accordion__header">
+        <h2 class="faq-accordion__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="faq-accordion__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="faq-accordion__list">
+      {%- for block in section.blocks -%}
+        <details
+          class="faq-accordion__item"
+          {{ block.shopify_attributes }}
+          {% if forloop.first and section.settings.first_open %}open{% endif %}
+        >
+          <summary class="faq-accordion__question">
+            <span class="faq-accordion__question-text">{{ block.settings.question }}</span>
+            <span class="faq-accordion__icon">
+              <svg class="faq-accordion__icon-plus" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              <svg class="faq-accordion__icon-minus" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-accordion__answer">
+            <div class="faq-accordion__answer-content">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="faq-accordion__footer">
+        <p class="faq-accordion__cta-text">{{ section.settings.cta_text }}</p>
+        {%- if section.settings.cta_button_label != blank -%}
+          <a href="{{ section.settings.cta_button_link }}" class="button button--secondary">
+            {{- section.settings.cta_button_label -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+{% stylesheet %}
+  .faq-accordion__header {
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+  }
+
+  .faq-accordion__heading {
+    margin: 0 0 1rem;
+  }
+
+  .faq-accordion__subheading {
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .faq-accordion__list {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .faq-accordion__item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  .faq-accordion__item:first-child {
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  .faq-accordion__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+
+  .faq-accordion__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-accordion__question:hover {
+    color: rgb(var(--color-button));
+  }
+
+  .faq-accordion__question-text {
+    flex: 1;
+  }
+
+  .faq-accordion__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-accordion__icon-plus,
+  .faq-accordion__icon-minus {
+    position: absolute;
+    transition: opacity 0.2s ease;
+  }
+
+  .faq-accordion__icon-minus {
+    opacity: 0;
+  }
+
+  .faq-accordion__item[open] .faq-accordion__icon-plus {
+    opacity: 0;
+  }
+
+  .faq-accordion__item[open] .faq-accordion__icon-minus {
+    opacity: 1;
+  }
+
+  .faq-accordion__answer {
+    overflow: hidden;
+  }
+
+  .faq-accordion__answer-content {
+    padding: 0 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+
+  .faq-accordion__answer-content p {
+    margin: 0 0 1rem;
+  }
+
+  .faq-accordion__answer-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-accordion__answer-content ul,
+  .faq-accordion__answer-content ol {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .faq-accordion__answer-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-accordion__footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  .faq-accordion__cta-text {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Intrebari frecvente"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Raspunsuri la cele mai comune intrebari despre serviciile noastre"
+    },
+    {
+      "type": "checkbox",
+      "id": "first_open",
+      "label": "Open first question by default",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Nu ai gasit raspunsul pe care il cautai?"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "Button label",
+      "default": "Contacteaza-ne"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "Button link",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Cat dureaza crearea unui website?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Cat dureaza crearea unui website?",
+            "answer": "<p>Durata depinde de complexitatea proiectului. Un site de prezentare simplu poate fi gata in 2-3 saptamani, in timp ce un magazin online complex poate necesita 4-8 saptamani. La prima discutie vom stabili un timeline clar pentru proiectul tau.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Platesc pentru hosting separat?",
+            "answer": "<p>Depinde de solutia aleasa. Pentru site-urile Shopify, hostingul este inclus in abonamentul lunar Shopify. Pentru celelalte platforme, te putem ajuta sa alegi un plan de hosting potrivit sau putem gestiona noi hostingul pentru tine.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Pot modifica site-ul singur dupa lansare?",
+            "answer": "<p>Da, absolut! Toate site-urile noastre vin cu un panou de administrare intuitiv. Iti oferim si un training gratuit pentru a invata cum sa faci modificari de baza: texte, imagini, produse etc.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Ce se intampla daca am nevoie de ajutor dupa lansare?",
+            "answer": "<p>Oferim suport post-lansare inclus in fiecare pachet (perioada variaza). Dupa perioada inclusa, poti opta pentru un pachet de mentenanta lunar sau poti solicita interventii punctuale la nevoie.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Oferiti si servicii de SEO?",
+            "answer": "<p>Da, optimizarea SEO de baza este inclusa in toate pachetele noastre. Pentru campanii SEO avansate si promovare continua, oferim pachete separate de marketing digital.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

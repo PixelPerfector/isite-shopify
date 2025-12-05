@@ -1,0 +1,219 @@
+{{ 'section-before-after.css' | asset_url | stylesheet_tag }}
+
+<div class="before-after-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="before-after-section__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="before-after__heading {{ section.settings.heading_size }}">
+        {{- section.settings.heading -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="before-after__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <before-after-slider
+      class="before-after__container"
+      style="--position: {{ section.settings.initial_position }}%"
+    >
+      <div class="before-after__wrapper">
+        {%- comment -%} After Image (Background, visible on right) {%- endcomment -%}
+        <div class="before-after__after">
+          {%- if section.settings.image_after != blank -%}
+            {{- section.settings.image_after | image_url: width: 1200 | image_tag:
+              class: 'before-after__image',
+              loading: 'lazy',
+              sizes: '(min-width: 900px) 900px, 100vw',
+              widths: '375, 550, 750, 900, 1100, 1200'
+            -}}
+          {%- else -%}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'before-after__image placeholder' }}
+          {%- endif -%}
+          <span class="before-after__label before-after__label--after">
+            {{- section.settings.label_after -}}
+          </span>
+        </div>
+
+        {%- comment -%} Before Image (Clipped, visible on left) {%- endcomment -%}
+        <div class="before-after__before">
+          {%- if section.settings.image_before != blank -%}
+            {{- section.settings.image_before | image_url: width: 1200 | image_tag:
+              class: 'before-after__image',
+              loading: 'lazy',
+              sizes: '(min-width: 900px) 900px, 100vw',
+              widths: '375, 550, 750, 900, 1100, 1200'
+            -}}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'before-after__image placeholder' }}
+          {%- endif -%}
+          <span class="before-after__label before-after__label--before">
+            {{- section.settings.label_before -}}
+          </span>
+        </div>
+
+        {%- comment -%} Slider Handle {%- endcomment -%}
+        <div
+          class="before-after__handle"
+          role="slider"
+          tabindex="0"
+          aria-label="{{ 'accessibility.before_after_slider' | t | default: 'Drag to compare images' }}"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="{{ section.settings.initial_position }}"
+        >
+          <div class="before-after__handle-line"></div>
+          <div class="before-after__handle-circle">
+            <div class="before-after__handle-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 5L3 12L8 19M16 5L21 12L16 19"/>
+              </svg>
+            </div>
+          </div>
+          <div class="before-after__handle-line"></div>
+        </div>
+      </div>
+    </before-after-slider>
+
+    {%- if section.settings.show_instruction -%}
+      <p class="before-after__instruction">
+        {{- section.settings.instruction_text | default: 'Trage pentru a compara' -}}
+      </p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+<script src="{{ 'before-after.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Before/after slider",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Transformare vizuala"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Vezi diferenta dintre un site vechi si unul modern, profesional"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_before",
+      "label": "Before image (left side)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_after",
+      "label": "After image (right side)"
+    },
+    {
+      "type": "text",
+      "id": "label_before",
+      "label": "Before label",
+      "default": "Inainte"
+    },
+    {
+      "type": "text",
+      "id": "label_after",
+      "label": "After label",
+      "default": "Dupa"
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "range",
+      "id": "initial_position",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "default": 50,
+      "unit": "%",
+      "label": "Initial slider position"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_instruction",
+      "label": "Show instruction text",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "instruction_text",
+      "label": "Instruction text",
+      "default": "Trage pentru a compara"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before/after slider"
+    }
+  ]
+}
+{% endschema %}

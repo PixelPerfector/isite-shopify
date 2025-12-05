@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "proposal": {
+      "type": "proposal-display",
+      "settings": {
+        "greeting_prefix": "Salut",
+        "intro_text": "Pe baza informatiilor furnizate, iata estimarea ta de pret:",
+        "message_title": "Te vom contacta in curand!",
+        "message_text": "Unul dintre consultantii nostri te va suna in maxim 24 de ore pentru a discuta detaliile proiectului tau.",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "proposal"
+  ]
+}

@@ -1,0 +1,329 @@
+<div class="industry-niches color-{{ section.settings.color_scheme }} gradient">
+  <div class="industry-niches__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="industry-niches__header">
+        <h2 class="industry-niches__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="industry-niches__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="industry-niches__grid industry-niches__grid--{{ section.settings.columns_desktop }}">
+      {%- for block in section.blocks -%}
+        <a
+          href="{{ block.settings.link | default: '#' }}"
+          class="industry-niches__card"
+          {{ block.shopify_attributes }}
+        >
+          <div class="industry-niches__card-image">
+            {%- if block.settings.image != blank -%}
+              {{- block.settings.image | image_url: width: 600 | image_tag:
+                class: 'industry-niches__image',
+                loading: 'lazy',
+                sizes: '(min-width: 1200px) 280px, (min-width: 750px) 33vw, 50vw',
+                widths: '200, 300, 400, 500, 600'
+              -}}
+            {%- else -%}
+              {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'industry-niches__image placeholder' }}
+            {%- endif -%}
+            <div class="industry-niches__overlay"></div>
+          </div>
+          <div class="industry-niches__content">
+            {%- if block.settings.icon != blank -%}
+              <div class="industry-niches__icon">
+                {{- block.settings.icon | image_url: width: 80 | image_tag -}}
+              </div>
+            {%- endif -%}
+            <h3 class="industry-niches__title h4">{{ block.settings.title }}</h3>
+            {%- if block.settings.description != blank -%}
+              <p class="industry-niches__description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+{% stylesheet %}
+  .industry-niches__header {
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+  }
+
+  .industry-niches__heading {
+    margin: 0 0 1rem;
+  }
+
+  .industry-niches__subheading {
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .industry-niches__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 750px) {
+    .industry-niches__grid {
+      gap: 2rem;
+    }
+
+    .industry-niches__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .industry-niches__grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .industry-niches__grid--5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .industry-niches__card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    aspect-ratio: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .industry-niches__card:hover {
+    transform: translateY(-4px);
+  }
+
+  .industry-niches__card-image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .industry-niches__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .industry-niches__card:hover .industry-niches__image {
+    transform: scale(1.05);
+  }
+
+  .industry-niches__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+    transition: background 0.3s ease;
+  }
+
+  .industry-niches__card:hover .industry-niches__overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .industry-niches__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: white;
+    z-index: 1;
+  }
+
+  .industry-niches__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.75rem;
+  }
+
+  .industry-niches__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  .industry-niches__title {
+    margin: 0;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  @media screen and (min-width: 750px) {
+    .industry-niches__title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .industry-niches__description {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Industry niches",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Industrii pe care le servim"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Experienta in diverse domenii ne permite sa intelegem nevoile specifice afacerii tale"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" }
+      ],
+      "default": "5"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "niche",
+      "name": "Industry niche",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Industry"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description (optional)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Industry niches",
+      "blocks": [
+        {
+          "type": "niche",
+          "settings": {
+            "title": "Constructii"
+          }
+        },
+        {
+          "type": "niche",
+          "settings": {
+            "title": "Fashion"
+          }
+        },
+        {
+          "type": "niche",
+          "settings": {
+            "title": "Beauty"
+          }
+        },
+        {
+          "type": "niche",
+          "settings": {
+            "title": "Medical"
+          }
+        },
+        {
+          "type": "niche",
+          "settings": {
+            "title": "HoReCa"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

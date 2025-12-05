@@ -1,0 +1,321 @@
+.calculator-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.calculator__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.calculator__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calculator__heading {
+  margin: 0 0 0.5rem;
+}
+
+.calculator__subheading {
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Progress Bar */
+.calc-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.calc-progress__track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(var(--color-foreground), 0.1);
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.calc-progress__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgb(var(--color-button));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.calc-progress__step {
+  position: relative;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgb(var(--color-background));
+  border: 3px solid rgba(var(--color-foreground), 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.calc-progress__step--active {
+  border-color: rgb(var(--color-button));
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.calc-progress__step--current {
+  box-shadow: 0 0 0 4px rgba(var(--color-button), 0.2);
+}
+
+/* Steps */
+.calc-step {
+  display: none;
+}
+
+.calc-step--active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calc-step__title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 2rem;
+}
+
+/* Options Grid */
+.calc-options {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 550px) {
+  .calc-options--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.calc-option {
+  padding: 1.25rem;
+  border: 2px solid rgba(var(--color-foreground), 0.12);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(var(--color-background));
+}
+
+.calc-option:hover {
+  border-color: rgba(var(--color-foreground), 0.25);
+  transform: translateY(-2px);
+}
+
+.calc-option--selected {
+  border-color: rgb(var(--color-button));
+  background: rgba(var(--color-button), 0.05);
+  box-shadow: 0 0 0 1px rgb(var(--color-button));
+}
+
+.calc-option__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(var(--color-foreground), 0.05);
+}
+
+.calc-option__icon svg {
+  width: 28px;
+  height: 28px;
+  color: rgb(var(--color-foreground));
+  opacity: 0.8;
+}
+
+.calc-option--selected .calc-option__icon {
+  background: rgb(var(--color-button));
+}
+
+.calc-option--selected .calc-option__icon svg {
+  color: rgb(var(--color-button-text));
+  opacity: 1;
+}
+
+.calc-option__title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.calc-option__desc {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* Pages Input */
+.calc-pages {
+  text-align: center;
+}
+
+.calc-pages__input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calc-pages__btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(var(--color-foreground), 0.15);
+  background: rgb(var(--color-background));
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-pages__btn:hover {
+  border-color: rgb(var(--color-button));
+  color: rgb(var(--color-button));
+}
+
+.calc-pages__input {
+  width: 80px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  -moz-appearance: textfield;
+}
+
+.calc-pages__input::-webkit-outer-spin-button,
+.calc-pages__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-pages__label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Contact Form */
+.calc-contact {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calc-contact__field {
+  margin-bottom: 1.25rem;
+}
+
+.calc-contact__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.calc-contact__label span {
+  color: #ef4444;
+}
+
+.calc-contact__input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid rgba(var(--color-foreground), 0.12);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgb(var(--color-background));
+  transition: border-color 0.2s ease;
+}
+
+.calc-contact__input:focus {
+  outline: none;
+  border-color: rgb(var(--color-button));
+}
+
+.calc-contact__input::placeholder {
+  opacity: 0.5;
+}
+
+/* Navigation */
+.calc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+}
+
+.calc-nav__btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calc-nav__btn--prev {
+  background: transparent;
+  border: 2px solid rgba(var(--color-foreground), 0.2);
+  color: rgb(var(--color-foreground));
+}
+
+.calc-nav__btn--prev:hover {
+  border-color: rgba(var(--color-foreground), 0.4);
+}
+
+.calc-nav__btn--next {
+  background: rgb(var(--color-button));
+  border: 2px solid rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  min-width: 140px;
+}
+
+.calc-nav__btn--next:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.calc-nav__btn--next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

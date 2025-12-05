@@ -1,0 +1,249 @@
+<div class="hero-agency color-{{ section.settings.color_scheme }} gradient">
+  {%- if section.settings.background_image != blank -%}
+    <div class="hero-agency__background">
+      {{- section.settings.background_image | image_url: width: 1920 | image_tag:
+        class: 'hero-agency__background-image',
+        loading: 'eager',
+        fetchpriority: 'high',
+        sizes: '100vw',
+        widths: '375, 750, 1100, 1500, 1780, 1920'
+      -}}
+    </div>
+  {%- endif -%}
+
+  <div class="hero-agency__overlay" style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></div>
+
+  <div class="hero-agency__content page-width">
+    <div class="hero-agency__text-wrapper {{ section.settings.content_alignment }}">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="hero-agency__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h1>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="hero-agency__subheading">
+          {{- section.settings.subheading -}}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          href="{{ section.settings.button_link | default: '/pages/calculator' }}"
+          class="hero-agency__button button button--primary"
+        >
+          {{- section.settings.button_label -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .hero-agency {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-agency {
+      min-height: 70vh;
+    }
+  }
+
+  .hero-agency__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-agency__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-agency__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, var(--overlay-opacity, 0.4));
+  }
+
+  .hero-agency__content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-agency__content {
+      padding: 6rem 2rem;
+    }
+  }
+
+  .hero-agency__text-wrapper {
+    max-width: 70rem;
+  }
+
+  .hero-agency__text-wrapper.center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-agency__text-wrapper.left {
+    text-align: left;
+  }
+
+  .hero-agency__text-wrapper.right {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .hero-agency__heading {
+    margin: 0 0 1.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-agency__heading.h0 {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+    line-height: 1.1;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-agency__heading.h0 {
+      font-size: calc(var(--font-heading-scale) * 5rem);
+    }
+  }
+
+  .hero-agency__subheading {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-agency__subheading {
+      font-size: 1.25rem;
+      max-width: 60rem;
+    }
+  }
+
+  .hero-agency__text-wrapper.center .hero-agency__subheading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-agency__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero-agency__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero agency",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 10,
+      "default": 40,
+      "unit": "%",
+      "label": "Overlay opacity"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Transformam afacerea ta cu un site performant"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h0"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Cream site-uri web profesionale care iti aduc clienti noi si iti cresc afacerea. De la landing pages la magazine online complete."
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Calculeaza Pret Website"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/pages/calculator"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero agency"
+    }
+  ]
+}
+{% endschema %}

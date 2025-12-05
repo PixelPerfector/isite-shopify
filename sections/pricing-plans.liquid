@@ -1,0 +1,471 @@
+<div class="pricing-plans color-{{ section.settings.color_scheme }} gradient">
+  <div class="pricing-plans__container page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="pricing-plans__header">
+        <h2 class="pricing-plans__heading {{ section.settings.heading_size }}">
+          {{- section.settings.heading -}}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="pricing-plans__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="pricing-plans__grid pricing-plans__grid--{{ section.blocks.size }}">
+      {%- for block in section.blocks -%}
+        <div
+          class="pricing-plans__card{% if block.settings.highlighted %} pricing-plans__card--highlighted{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.badge != blank -%}
+            <span class="pricing-plans__badge">{{ block.settings.badge }}</span>
+          {%- endif -%}
+
+          <div class="pricing-plans__card-header">
+            <h3 class="pricing-plans__name h4">{{ block.settings.name }}</h3>
+            <div class="pricing-plans__price">
+              {%- if block.settings.price_prefix != blank -%}
+                <span class="pricing-plans__price-prefix">{{ block.settings.price_prefix }}</span>
+              {%- endif -%}
+              <span class="pricing-plans__price-value">{{ block.settings.price }}</span>
+              {%- if block.settings.price_suffix != blank -%}
+                <span class="pricing-plans__price-suffix">{{ block.settings.price_suffix }}</span>
+              {%- endif -%}
+            </div>
+            {%- if block.settings.description != blank -%}
+              <p class="pricing-plans__description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.features != blank -%}
+            <div class="pricing-plans__features">
+              {{ block.settings.features }}
+            </div>
+          {%- endif -%}
+
+          <div class="pricing-plans__card-footer">
+            <a
+              href="{{ block.settings.button_link | default: '/pages/calculator' }}"
+              class="pricing-plans__button button{% if block.settings.highlighted %} button--primary{% else %} button--secondary{% endif %}"
+            >
+              {{- block.settings.button_label | default: 'Solicita Oferta' -}}
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.upsell_text != blank -%}
+      <div class="pricing-plans__upsell">
+        <div class="pricing-plans__upsell-content">
+          {%- if section.settings.upsell_icon -%}
+            <svg class="pricing-plans__upsell-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          {%- endif -%}
+          <span>{{ section.settings.upsell_text }}</span>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.note != blank -%}
+      <p class="pricing-plans__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+</style>
+
+{% stylesheet %}
+  .pricing-plans__header {
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+  }
+
+  .pricing-plans__heading {
+    margin: 0 0 1rem;
+  }
+
+  .pricing-plans__subheading {
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .pricing-plans__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: 750px) {
+    .pricing-plans__grid {
+      gap: 2rem;
+    }
+
+    .pricing-plans__grid--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-plans__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-plans__grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .pricing-plans__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: rgb(var(--color-background));
+    border: 2px solid rgba(var(--color-foreground), 0.1);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pricing-plans__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(var(--color-foreground), 0.1);
+  }
+
+  .pricing-plans__card--highlighted {
+    border-color: rgb(var(--color-button));
+    box-shadow: 0 0 0 1px rgb(var(--color-button));
+  }
+
+  .pricing-plans__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.35rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .pricing-plans__card-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-plans__name {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+
+  .pricing-plans__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-plans__price-prefix {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .pricing-plans__price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .pricing-plans__price-suffix {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .pricing-plans__description {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .pricing-plans__features {
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-plans__features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pricing-plans__features li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .pricing-plans__features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .pricing-plans__card-footer {
+    margin-top: auto;
+  }
+
+  .pricing-plans__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-plans__upsell {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .pricing-plans__upsell-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: rgb(var(--color-foreground));
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .pricing-plans__upsell-icon {
+    color: #22c55e;
+    flex-shrink: 0;
+  }
+
+  .pricing-plans__note {
+    text-align: center;
+    margin: 2rem 0 0;
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pricing plans",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pachete si preturi"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Alege pachetul potrivit pentru afacerea ta"
+    },
+    {
+      "type": "header",
+      "content": "Upsell message"
+    },
+    {
+      "type": "checkbox",
+      "id": "upsell_icon",
+      "label": "Show checkmark icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "upsell_text",
+      "label": "Upsell text",
+      "default": "Mentenanta post-lansare inclusa pentru toate pachetele"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Footer note",
+      "default": "* Preturile sunt orientative. Solicita o oferta personalizata pentru nevoile tale."
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Pricing plan",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Plan name",
+          "default": "Starter"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge text (optional)",
+          "info": "E.g., 'Most Popular', 'Best Value'"
+        },
+        {
+          "type": "text",
+          "id": "price_prefix",
+          "label": "Price prefix",
+          "default": "de la"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "500 EUR"
+        },
+        {
+          "type": "text",
+          "id": "price_suffix",
+          "label": "Price suffix"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Short description",
+          "default": "Perfect pentru afaceri mici"
+        },
+        {
+          "type": "richtext",
+          "id": "features",
+          "label": "Features list",
+          "default": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Solicita Oferta"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link",
+          "default": "/pages/calculator"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlighted",
+          "label": "Highlight this plan",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing plans",
+      "blocks": [
+        {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "price_prefix": "de la",
+            "price": "500 EUR",
+            "description": "Perfect pentru afaceri mici",
+            "features": "<ul><li>Design responsive</li><li>Pana la 5 pagini</li><li>Formular de contact</li><li>SEO de baza</li><li>1 luna suport gratuit</li></ul>",
+            "highlighted": false
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "name": "Pro",
+            "badge": "Cel mai popular",
+            "price_prefix": "de la",
+            "price": "1500 EUR",
+            "description": "Pentru afaceri in crestere",
+            "features": "<ul><li>Tot din Starter +</li><li>Pana la 15 pagini</li><li>Blog integrat</li><li>SEO avansat</li><li>Integrare social media</li><li>3 luni suport gratuit</li></ul>",
+            "highlighted": true
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "name": "Custom",
+            "price_prefix": "de la",
+            "price": "3000 EUR",
+            "description": "Solutii enterprise",
+            "features": "<ul><li>Tot din Pro +</li><li>Pagini nelimitate</li><li>E-commerce complet</li><li>Functionalitati custom</li><li>Integrari API</li><li>6 luni suport gratuit</li></ul>",
+            "highlighted": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
