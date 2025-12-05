@@ -302,44 +302,46 @@
     "why_us": {
       "type": "why-us",
       "blocks": {
-        "advantage_UnppCn": {
-          "type": "advantage",
+        "speed": {
+          "type": "stat",
           "settings": {
-            "icon_name": "quality",
-            "title": "Calitate",
-            "description": "Cod curat, design modern si performanta de top pentru fiecare proiect.",
-            "highlight": ""
+            "icon_type": "rocket",
+            "icon_color": "blue",
+            "number": "2-4",
+            "unit": "Saptamani",
+            "tagline": "De la idee la site live"
           }
         },
-        "quality": {
-          "type": "advantage",
+        "support": {
+          "type": "stat",
           "settings": {
-            "icon_name": "quality",
-            "title": "Calitate Premium",
-            "description": "Cod curat, design modern.",
-            "highlight": ""
+            "icon_type": "shield",
+            "icon_color": "green",
+            "number": "6",
+            "unit": "Luni Suport",
+            "tagline": "Inclus gratuit in pret"
           }
         },
-        "stability": {
-          "type": "advantage",
+        "guarantee": {
+          "type": "stat",
           "settings": {
-            "icon_name": "quality",
-            "title": "Stabilitate",
-            "description": "Site-uri stabile si sigure.",
-            "highlight": ""
+            "icon_type": "trophy",
+            "icon_color": "gold",
+            "number": "100%",
+            "unit": "Garantie",
+            "tagline": "Satisfactie sau banii inapoi"
           }
         }
       },
       "block_order": [
-        "advantage_UnppCn",
-        "quality",
-        "stability"
+        "speed",
+        "support",
+        "guarantee"
       ],
       "settings": {
         "heading": "De ce sa ne alegi pe noi?",
         "heading_size": "h2",
-        "subheading": "Avantajele de a lucra cu Perlog Software",
-        "columns_desktop": "3",
+        "subheading": "",
         "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
