@@ -13,39 +13,26 @@
 
     <div class="why-website__grid why-website__grid--{{ section.settings.columns_desktop }}">
       {%- for block in section.blocks -%}
-        <div class="why-website__item" {{ block.shopify_attributes }}>
-          {%- if block.settings.icon != blank -%}
-            <div class="why-website__icon">
-              {{ block.settings.icon | image_url: width: 120 | image_tag: class: 'why-website__icon-image' }}
-            </div>
-          {%- else -%}
-            <div class="why-website__icon why-website__icon--default">
-              {%- case block.settings.icon_name -%}
-                {%- when 'credibility' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                {%- when 'sales' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                {%- when 'global' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                {%- when 'growth' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-                {%- when 'mobile' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                {%- when 'speed' -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                {%- else -%}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              {%- endcase -%}
-            </div>
-          {%- endif -%}
+        <div class="why-website__card" {{ block.shopify_attributes }}>
+          <div class="why-website__image-wrapper">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: class: 'why-website__image', loading: 'lazy' }}
+            {%- else -%}
+              <div class="why-website__image-placeholder">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- endif -%}
+          </div>
 
-          {%- if block.settings.title != blank -%}
-            <h3 class="why-website__item-title h4">{{ block.settings.title }}</h3>
-          {%- endif -%}
+          <div class="why-website__card-content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="why-website__card-title h4">{{ block.settings.title }}</h3>
+            {%- endif -%}
 
-          {%- if block.settings.description != blank -%}
-            <p class="why-website__item-description">{{ block.settings.description }}</p>
-          {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="why-website__card-description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
         </div>
       {%- endfor -%}
     </div>
@@ -106,43 +93,60 @@
     }
   }
 
-  .why-website__item {
-    padding: 2rem;
-    border-radius: 8px;
+  .why-website__card {
+    background: rgba(var(--color-foreground), 0.03);
+    border-radius: 12px;
+    overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .why-website__item:hover {
+  .why-website__card:hover {
     transform: translateY(-4px);
   }
 
-  .why-website__icon {
+  .why-website__image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+
+  .why-website__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .why-website__image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
     background: rgba(var(--color-foreground), 0.05);
   }
 
-  .why-website__icon--default svg {
-    color: rgb(var(--color-foreground));
-    opacity: 0.8;
+  .why-website__image-placeholder .placeholder-svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
   }
 
-  .why-website__icon-image {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
+  .why-website__card-content {
+    padding: 1.5rem;
   }
 
-  .why-website__item-title {
+  .why-website__card-title {
     margin: 0 0 0.75rem;
   }
 
-  .why-website__item-description {
+  .why-website__card-description {
     margin: 0;
     font-size: 0.95rem;
     opacity: 0.75;
@@ -220,39 +224,25 @@
   "blocks": [
     {
       "type": "feature",
-      "name": "Feature",
+      "name": "Card",
       "limit": 6,
       "settings": [
         {
           "type": "image_picker",
-          "id": "icon",
-          "label": "Custom icon image"
-        },
-        {
-          "type": "select",
-          "id": "icon_name",
-          "label": "Default icon (if no custom icon)",
-          "options": [
-            { "value": "credibility", "label": "Credibility (shield)" },
-            { "value": "sales", "label": "24/7 Sales (clock)" },
-            { "value": "global", "label": "Global reach (globe)" },
-            { "value": "growth", "label": "Growth (chart)" },
-            { "value": "mobile", "label": "Mobile (phone)" },
-            { "value": "speed", "label": "Speed (lightning)" }
-          ],
-          "default": "credibility"
+          "id": "image",
+          "label": "Image"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Credibilitate"
+          "default": "Sa fii vizibil pe Google"
         },
         {
           "type": "textarea",
           "id": "description",
           "label": "Description",
-          "default": "Un website profesional construieste increderea clientilor in brandul tau."
+          "default": "Clientii te gasesc cand cauta serviciile tale online."
         }
       ]
     }
@@ -264,25 +254,22 @@
         {
           "type": "feature",
           "settings": {
-            "icon_name": "credibility",
-            "title": "Credibilitate",
-            "description": "Un website profesional construieste increderea clientilor in brandul tau."
+            "title": "Sa fii vizibil pe Google",
+            "description": "Clientii te gasesc cand cauta serviciile tale online."
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon_name": "sales",
-            "title": "Vanzari 24/7",
-            "description": "Site-ul tau lucreaza non-stop, generand lead-uri si vanzari in timp ce tu te odihnesti."
+            "title": "Sa rulezi reclame YouTube",
+            "description": "Promoveaza-ti afacerea prin video-uri catre milioane de utilizatori."
           }
         },
         {
           "type": "feature",
           "settings": {
-            "icon_name": "global",
-            "title": "Acoperire globala",
-            "description": "Ajunge la clienti din intreaga lume fara limitele unei locatii fizice."
+            "title": "Sa vinzi online",
+            "description": "Transforma vizitatorii in clienti platitori, non-stop."
           }
         }
       ]
