@@ -12,9 +12,9 @@
     "hero": {
       "type": "hero-agency",
       "settings": {
-        "media_type": "image",
+        "media_type": "video",
         "background_video": "shopify://files/videos/6994619-uhd_3840_2160_30fps.mp4",
-        "overlay_opacity": 90,
+        "overlay_opacity": 5,
         "color_scheme": "scheme-3",
         "heading": "Transformam afacerea ta cu un site performant",
         "heading_size": "h0",
